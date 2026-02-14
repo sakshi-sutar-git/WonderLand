@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate")  %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+        <br><br>
+    <h3>edit your listing</h3>
+        <br><br>
+    <form method="POST" action="/listings/<%= listing._id%>?_method=PUT">
+        <div class="mb-3">
+        <label for="titel" class="form-label">Title :</label>
+        <input 
+        name="listing[title]" 
+        value="<%= listing.title %>" 
+        type="text"
+        class="form-control">
+        </div>
+        <br><br>
+
+        <div class="mb-3">
+        <label for="description" class="form-label">Description :</label>
+        <textarea 
+        name="listing[description]" class="form-control"><%= listing.description %></textarea>
+        </div>
+        <br><br>
+
+        <div class="mb-3">
+        <label for="image.url" class="form-label">Image Link :</label>
+        <input 
+        name="listing[image][url]" 
+        value="<%= listing.image.url %>" 
+        class="form-control">
+        </div>
+        <br><br>
+        
+        <div class="row">
+        <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price :</label>
+        <input 
+        name="listing[price]"  
+        value="<%= listing.price %>" 
+        type="number"
+        class="form-control">
+        </div>
+        <br><br>
+
+        <div class="mb-3  col-md-8">
+        <label for="location" class="form-label">Location :</label>
+        <input 
+        name="listing[location]" 
+        value="<%= listing.location %>"  
+        type="text"
+        class="form-control">
+        </div>
+        </div>
+         <br><br>
+        
+
+        <div class="mb-3">
+        <label for="country" class="form-label">Country :</label>
+        <input 
+        name="listing[country]" 
+        value="<%= listing.country %>" 
+        type="text"
+        class="form-control">
+        </div>
+        <br><br>
+        
+        <button class="btn btn-dark add-btn">edit</button>
+        <br><br>
+        
+    </form>
+    </div>
+    </div>
+</body>
